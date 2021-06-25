@@ -9,12 +9,12 @@ const Home = () => {
   const [todos, setTodos] = useState(null);
 
   useEffect(() => {
-    let canceled = false;
+    // let canceled = false;
 
     if (status !== 'loading') return;
 
     axios('/api/get-all-todos').then(result => {
-      if (canceled === true) return;
+      // if (canceled === true) return;
 
       if (result.status !== 200) {
         console.error('Error loading todos!');
@@ -26,9 +26,9 @@ const Home = () => {
       setStatus('loaded');
     });
 
-    return () => {
-      canceled = true
-    }
+    // return () => {
+    //   canceled = true
+    // }
 
   }, [status])
 
