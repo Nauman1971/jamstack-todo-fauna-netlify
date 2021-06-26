@@ -3,6 +3,7 @@ import * as styles from './index.module.css';
 import axios from 'axios';
 import Todo from '../components/todo';
 import Form from '../components/form';
+import Loader from '../components/Loader';
 
 const Home = () => {
   const [status, setStatus] = useState('loading');
@@ -34,7 +35,7 @@ const Home = () => {
 
   const reloadTodos = () => setStatus('loading');
   return (
-    <main>
+    <main className="container is-max-desktop">
       <h1 className="title is-2 has-text-centered mt-5">JAMStack Todos</h1>
       <Form reloadTodos={reloadTodos} />
       {todos ? (
@@ -44,7 +45,7 @@ const Home = () => {
           </li>
         )))}</ul>
       ) :
-        (<p className={styles.loading}>loading todos ...</p>)}
+        (<Loader loading={status === 'loading'} />)}
     </main>
   )
 }

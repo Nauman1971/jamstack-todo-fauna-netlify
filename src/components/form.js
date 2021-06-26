@@ -22,9 +22,10 @@ const Form = ({ reloadTodos }) => {
                     type="text"
                     className={styles.input}
                     value={text}
+                    required
                     onChange={(e) => setText(e.target.value)}
                 />
-                <button className={`${styles.button} mt-2`}>Save Todo</button>
+                <button className="button is-link mt-2">Save Todo</button>
             </label>
         </form>
     );

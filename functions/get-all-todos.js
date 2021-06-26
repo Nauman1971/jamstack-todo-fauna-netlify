@@ -14,7 +14,7 @@ const GET_ALL_TODOS = `
 
 exports.handler = async () => {
     const { data, errors } = await sendQuery(GET_ALL_TODOS);
-    console.log(data, errors);
+
     if (errors) {
         return {
             statusCode: 500,

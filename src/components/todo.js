@@ -72,9 +72,12 @@ const Todo = ({ todo, reloadTodos }) => {
                 >🧰
             </span>
             </button>
-            <input className="input is-danger"
+            <input
+                className="input is-danger"
+                required
                 placeholder="Enter text to update"
-                type="text" value={inputText}
+                type="text"
+                defaultValue={todo.text}
                 onChange={(e) => setInputText(e.target.value)}
             />
         </>
